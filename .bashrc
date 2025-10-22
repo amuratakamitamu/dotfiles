@@ -130,3 +130,8 @@ alias python=python3
 
 # ROS2のID(0から232)
 export ROS_DOMAIN_ID=1
+
+# turtlebot3
+source ~/turtlebot3_ws/install/setup.bash
+export TURTLEBOT3_MODEL=big_wheel
+export LDS_MODEL=LDS-01
