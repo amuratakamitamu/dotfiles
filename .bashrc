@@ -127,3 +127,6 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # pythonのエイリアス設定
 alias python=python3
+
+# ROS2のID(0から232)
+export ROS_DOMAIN_ID=1
