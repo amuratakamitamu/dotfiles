@@ -1,0 +1,46 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  ubuntu:
+    runs-on: ubuntu-latest
+    container: ubuntu:latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install required packages
+        run: |
+          apt-get update
+          apt-get install -y git sudo bash
+
+      - name: Install dotfiles
+        run: .bin/install.sh install
+
+  alpine:
+    runs-on: ubuntu-latest
+    container: alpine:latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install required packages
+        run: apk add --no-cache git sudo bash
+
+      - name: Install dotfiles
+        run: .bin/install.sh install
+
+  shellcheck:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install shellcheck
+        run: sudo apt-get update && sudo apt-get install -y shellcheck
+
+      - name: Run shellcheck
+        run: shellcheck .bin/*.sh
