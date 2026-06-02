@@ -116,22 +116,51 @@ if ! shopt -oq posix; then
   fi
 fi
 
+## Execute /dev/fd/63 2026/04/30 10:30:41
+source /opt/ros/humble/setup.bash
+export ROS_DOMAIN_ID=1
+source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash
+source /usr/share/colcon_cd/function/colcon_cd.sh
+export _colcon_cd_root=~
+source /home/amuratakamitamu/raspicat2/install/setup.bash
+export RASPICAT2_WS=/home/amuratakamitamu/raspicat2
+
+## Execute /dev/fd/63 2026/05/01 09:21:05
+export RCUTILS_COLORIZED_OUTPUT=1
+export ROS_LOCALHOST_ONLY=1
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-source /opt/ros/humble/setup.bash
 
-# rviz2をXWaylandで起動するための設定
-export QT_QPA_PLATFORM=xcb
-export PATH="$HOME/.local/bin:$PATH"
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/amuratakamitamu/miniforge3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/amuratakamitamu/miniforge3/etc/profile.d/conda.sh" ]; then
+        . "/home/amuratakamitamu/miniforge3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/amuratakamitamu/miniforge3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
 
-# pythonのエイリアス設定
-alias python=python3
 
-# ROS2のID(0から232)
-export ROS_DOMAIN_ID=1
+# >>> mamba initialize >>>
+# !! Contents within this block are managed by 'mamba shell init' !!
+export MAMBA_EXE='/home/amuratakamitamu/miniforge3/bin/mamba';
+export MAMBA_ROOT_PREFIX='/home/amuratakamitamu/miniforge3';
+__mamba_setup="$("$MAMBA_EXE" shell hook --shell bash --root-prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__mamba_setup"
+else
+    alias mamba="$MAMBA_EXE"  # Fallback on help from mamba activate
+fi
+unset __mamba_setup
+# <<< mamba initialize <<<
 
-# turtlebot3
-source ~/turtlebot3_ws/install/setup.bash
-export TURTLEBOT3_MODEL=big_wheel
-export LDS_MODEL=LDS-01
+# boot windows
+alias winboot='sudo grub-reboot "Windows Boot Manager (on /dev/nvme0n1p1)" && sudo reboot'

@@ -1,0 +1,5 @@
+[user]
+	name = amuratakamitamu
+	email = keikei12261226@gmail.com
+[include]
+	path = ~/.gitconfig_shared
