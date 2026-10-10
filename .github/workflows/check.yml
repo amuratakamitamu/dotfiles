@@ -20,6 +20,7 @@ jobs:
           test -L "$HOME/.bashrc"
           test -L "$HOME/.claude/settings.json"
           test -L "$HOME/.claude/skills/security-audit/SKILL.md"
+          test -L "$HOME/.codex/AGENTS.md"
 
   shellcheck:
     runs-on: ubuntu-latest

@@ -1,7 +1,7 @@
 # dotfiles
 
 ```
-home/      $HOME にリンクされる設定ファイル (.bashrc, .gitconfig, .tmux.conf, .config/, .claude/ など)
+home/      $HOME にリンクされる設定ファイル (.bashrc, .gitconfig, .tmux.conf, .config/, .claude/, .codex/ など)
 gnome/     GNOME 拡張の dconf
 scripts/   Ubuntu セットアップ・更新スクリプト
 ```
@@ -27,3 +27,8 @@ git clone git@github.com:amuratakamitamu/dotfiles.git ~/dotfiles
 認証情報・履歴・セッションはコミットしない。
 
 VSCode の設定・拡張機能は Settings Sync で同期しているので、ここでは管理しない。
+
+## Codex
+
+`home/.codex/` には `AGENTS.md` だけを置く。
+`config.toml` は Codex アプリが書き換え、端末固有の状態も含むので管理しない。
