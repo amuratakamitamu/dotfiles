@@ -122,7 +122,7 @@ export ROS_DOMAIN_ID=1
 source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash
 source /usr/share/colcon_cd/function/colcon_cd.sh
 export _colcon_cd_root=~
-source /home/amuratakamitamu/raspicat2/install/setup.bash
+[ -f "$HOME/raspicat2/install/setup.bash" ] && source "$HOME/raspicat2/install/setup.bash"
 export RASPICAT2_WS=/home/amuratakamitamu/raspicat2
 
 ## Execute /dev/fd/63 2026/05/01 09:21:05
@@ -164,3 +164,13 @@ unset __mamba_setup
 
 # boot windows
 alias winboot='sudo grub-reboot "Windows Boot Manager (on /dev/nvme0n1p1)" && sudo reboot'
+[ -f /usr/share/gazebo/setup.sh ] && source /usr/share/gazebo/setup.sh
+[ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
+
+# pnpm
+export PNPM_HOME="$HOME/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME/bin:"*) ;;
+  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
+esac
+# pnpm end

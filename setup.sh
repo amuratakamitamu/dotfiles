@@ -5,6 +5,8 @@ DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 source "$DOTFILES_DIR/scripts/lib/common.sh"
 
+SAFE_SCRIPTS=(base ime browsers vscode gnome shortcuts)
+
 run_script() {
   local script="$1"
 
@@ -78,20 +80,10 @@ MENU
       fi
       ;;
     8)
-      run_script "$DOTFILES_DIR/scripts/setup/base.sh"
-      run_script "$DOTFILES_DIR/scripts/setup/ime.sh"
-      run_script "$DOTFILES_DIR/scripts/setup/browsers.sh"
-      run_script "$DOTFILES_DIR/scripts/setup/vscode.sh"
-      run_script "$DOTFILES_DIR/scripts/setup/gnome.sh"
-      run_script "$DOTFILES_DIR/scripts/setup/shortcuts.sh"
+      for s in "${SAFE_SCRIPTS[@]}"; do run_script "$DOTFILES_DIR/scripts/setup/$s.sh"; done
       ;;
     9)
-      run_script "$DOTFILES_DIR/scripts/setup/base.sh"
-      run_script "$DOTFILES_DIR/scripts/setup/ime.sh"
-      run_script "$DOTFILES_DIR/scripts/setup/browsers.sh"
-      run_script "$DOTFILES_DIR/scripts/setup/vscode.sh"
-      run_script "$DOTFILES_DIR/scripts/setup/gnome.sh"
-      run_script "$DOTFILES_DIR/scripts/setup/shortcuts.sh"
+      for s in "${SAFE_SCRIPTS[@]}"; do run_script "$DOTFILES_DIR/scripts/setup/$s.sh"; done
 
       if confirm "GRUB設定の書き換えと update-grub の実行"; then
         run_script "$DOTFILES_DIR/scripts/setup/grub.sh"

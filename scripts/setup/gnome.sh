@@ -12,6 +12,7 @@ echo "- Tiling Shell"
 echo "- Rounded Window Corners"
 echo "- Blur my Shell"
 
-if [[ -f "$HOME/dotfiles/gnome/tilingshell.dconf" ]]; then
-  dconf load / < "$HOME/dotfiles/gnome/tilingshell.dconf"
+DCONF="$(dirname "${BASH_SOURCE[0]}")/../../gnome/tilingshell.dconf"
+if [[ -f "$DCONF" ]]; then
+  dconf load / < "$DCONF"
 fi
