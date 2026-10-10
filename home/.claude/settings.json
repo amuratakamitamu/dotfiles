@@ -166,5 +166,11 @@
   },
   "tui": "fullscreen",
   "skipDangerousModePermissionPrompt": true,
-  "theme": "dark"
+  "theme": "dark",
+  "autoMode": {
+    "allow": [
+      "$defaults",
+      "Deleting files or directories under the user home directory (/home/amuratakamitamu) with rm, rmdir, or gio trash, when the user has explicitly asked in this conversation to delete or clean up those specific paths. Never covers the home directory itself, dotfiles/, .ssh/, .gnupg/, .config/ as a whole, or paths the user did not name or approve."
+    ]
+  }
 }
