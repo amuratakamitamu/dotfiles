@@ -23,4 +23,5 @@ git clone git@github.com:amuratakamitamu/dotfiles.git ~/dotfiles
 ## Claude Code
 
 `home/.claude/` には共有したい設定だけを置く (`settings.json`, `skills/`)。
-認証情報・履歴・セッション・Orca が注入するフックはコミットしない。
+`settings.json` には Orca のフック・statusLine も含む (Orca が無い環境では何もしない)。
+認証情報・履歴・セッションはコミットしない。
