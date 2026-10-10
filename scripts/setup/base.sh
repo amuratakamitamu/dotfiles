@@ -10,4 +10,9 @@ sudo apt install -y \
   apt-transport-https \
   tree \
   micro \
-  dconf-cli
+  dconf-cli \
+  gh \
+  git-lfs
+
+git lfs install
+echo "gh auth login を実行してください (git の認証に使います)"

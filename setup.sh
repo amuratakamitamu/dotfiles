@@ -26,7 +26,7 @@ while true; do
 🛠 Ubuntu dotfiles installer
 
 1) apt更新と基本ツールの導入
-   - curl / wget / gpg / ca-certificates / tree / micro / dconf-cli
+   - curl / wget / gpg / ca-certificates / tree / micro / dconf-cli / gh / git-lfs
 
 2) 日本語入力環境の導入
    - fcitx5-mozc / im-config

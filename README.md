@@ -1,7 +1,7 @@
 # dotfiles
 
 ```
-home/      $HOME にリンクされる設定ファイル (.bashrc, .gitconfig, .claude/ など)
+home/      $HOME にリンクされる設定ファイル (.bashrc, .gitconfig, .tmux.conf, .config/, .claude/ など)
 gnome/     GNOME 拡張の dconf
 scripts/   Ubuntu セットアップ・更新スクリプト
 ```
@@ -22,6 +22,8 @@ git clone git@github.com:amuratakamitamu/dotfiles.git ~/dotfiles
 
 ## Claude Code
 
-`home/.claude/` には共有したい設定だけを置く (`settings.json`, `skills/`)。
+`home/.claude/` には共有したい設定だけを置く (`CLAUDE.md`, `settings.json`, `skills/`)。
 `settings.json` には Orca のフック・statusLine も含む (Orca が無い環境では何もしない)。
 認証情報・履歴・セッションはコミットしない。
+
+VSCode の設定・拡張機能は Settings Sync で同期しているので、ここでは管理しない。
